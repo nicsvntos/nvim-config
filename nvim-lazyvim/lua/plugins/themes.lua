@@ -1,5 +1,79 @@
 return {
-  "webhooked/kanso.nvim",
-  lazy = false,
-  priority = 1000,
+  {
+    "vague2k/vague.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("vague").setup({
+        style = {
+          boolean = "none",
+          number = "none",
+          float = "none",
+          error = "none",
+          comments = "none",
+          conditionals = "none",
+          functions = "none",
+          headings = "bold",
+          operators = "none",
+          strings = "none",
+          variables = "none",
+          keywords = "none",
+          keyword_return = "none",
+          keywords_loop = "none",
+          keywords_label = "none",
+          keywords_exception = "none",
+          builtin_constants = "none",
+          builtin_functions = "none",
+          builtin_types = "none",
+          builtin_variables = "none",
+        },
+        colors = {
+          func = "#bc96b0",
+          keyword = "#787bab",
+          string = "#8a739a",
+          number = "#8f729e",
+        },
+      })
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "vague",
+        callback = function()
+          -- italicization
+          vim.api.nvim_set_hl(0, "Comment", { fg = "#606079", italic = false })
+          vim.api.nvim_set_hl(0, "String", { fg = "#8a739a", italic = false })
+          vim.api.nvim_set_hl(0, "@comment", { fg = "#606079", italic = false })
+          vim.api.nvim_set_hl(0, "@string", { fg = "#8a739a", italic = false })
+          vim.api.nvim_set_hl(0, "@keyword", { fg = "#787bab", italic = false })
+          vim.api.nvim_set_hl(0, "@function", { fg = "#bc96b0", italic = false })
+          vim.api.nvim_set_hl(0, "@type", { fg = "#9bb4bc", italic = false })
+          vim.api.nvim_set_hl(0, "@variable", { fg = "#cdcdcd", italic = false })
+
+          -- floats / popups
+          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1c1c24" })
+          vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#878787" })
+          vim.api.nvim_set_hl(0, "Pmenu", { bg = "#1c1c24", fg = "#cdcdcd" })
+          vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#252530", fg = "#cdcdcd" })
+          vim.api.nvim_set_hl(0, "PmenuBorder", { fg = "#878787" })
+
+          vim.api.nvim_set_hl(0, "Visual", { bg = "#2e2e3e" })
+          vim.api.nvim_set_hl(0, "CursorLine", { bg = "#252530" })
+          vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#252530" })
+          vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "#252530" })
+
+          -- completion
+          vim.api.nvim_set_hl(0, "CmpItemAbbr", { fg = "#cdcdcd" })
+          vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#6e94b2", bold = true })
+          vim.api.nvim_set_hl(0, "CmpItemKind", { fg = "#787bab" })
+          vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#606079" })
+        end,
+      })
+    end,
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "vague",
+    },
+  },
 }
