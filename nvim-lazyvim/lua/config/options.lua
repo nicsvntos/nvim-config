@@ -11,4 +11,6 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_title_hidden = true
   vim.g.neovide_fullscreen = true
+  vim.opt.wrap = true
+  vim.opt.linebreak = true
 end

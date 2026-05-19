@@ -27,4 +27,20 @@ return {
       require("harpoon"):setup()
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "BufReadPost",
+    opts = {
+      max_lines = 3,
+    },
+  },
+
+  {
+    "nvim-mini/mini.splitjoin",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      { "gS", desc = "Split/join arguments" },
+    },
+  },
 }
