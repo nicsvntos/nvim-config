@@ -43,4 +43,23 @@ return {
       { "gS", desc = "Split/join arguments" },
     },
   },
+
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+    keys = {
+      { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle undotree" },
+    },
+  },
+
+  {
+    "abecodes/tabout.nvim",
+    event = "InsertEnter",
+    opts = {
+      tabkey = "<Tab>",
+      backwards_tabkey = "<S-Tab>",
+      act_as_tab = true,
+      ignore_beginning = true,
+    },
+  },
 }

@@ -14,6 +14,7 @@ return {
             "node_modules/",
           },
           preview = {
+            treesitter = false,
             mime_hook = function(filepath, bufnr, opts)
               local is_image = function(fp)
                 local image_extensions = { "png", "jpg", "jpeg", "gif", "webp" }
@@ -21,7 +22,11 @@ return {
                 return vim.tbl_contains(image_extensions, ext)
               end
               if is_image(filepath) then
-                opts.callback(bufnr, "Image preview not supported")
+                require("telescope.previewers.utils").set_preview_message(
+                  bufnr,
+                  opts.winid,
+                  "Image preview not supported"
+                )
               else
                 require("telescope.previewers.utils").set_preview_message(
                   bufnr,

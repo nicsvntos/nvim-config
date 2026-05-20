@@ -7,6 +7,8 @@ return {
         python = { "isort", "black" },
         javascript = { "prettier" },
         typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+        javascriptreact = { "prettier" },
         svelte = { "prettier" },
         html = { "prettier" },
         css = { "prettier" },
