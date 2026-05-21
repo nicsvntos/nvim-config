@@ -110,3 +110,9 @@ end, { desc = "Restore last session" })
 map("n", "<leader>qd", function()
   require("persistence").stop()
 end, { desc = "Don't save current session" })
+
+vim.keymap.set("n", "<leader>uC", function()
+  require("telescope.builtin").colorscheme({ enable_preview = true })
+end, { desc = "Switch colorscheme" })
+
+map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle zen mode" })

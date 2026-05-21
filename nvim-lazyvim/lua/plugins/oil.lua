@@ -7,6 +7,15 @@ return {
         show_hidden = true,
       },
 
+      float = {
+        padding = 2,
+        max_width = 40,
+        max_height = 20,
+        border = "rounded",
+        winblend = {
+          winblend = 0,
+        },
+      },
       keymaps = {
         ["<CR>"] = "actions.select",
         ["<BS>"] = "actions.parent",
@@ -16,6 +25,6 @@ return {
       },
     })
 
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "Open parent directory" })
   end,
 }

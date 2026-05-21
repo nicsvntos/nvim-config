@@ -65,6 +65,33 @@ return {
           vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#6e94b2", bold = true })
           vim.api.nvim_set_hl(0, "CmpItemKind", { fg = "#787bab" })
           vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#606079" })
+
+          -- line number
+          vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#646477" })
+          vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#646477" })
+          vim.api.nvim_set_hl(0, "LineNr", { fg = "#d6d2c8" })
+        end,
+      })
+    end,
+  },
+
+  {
+    "RRethy/nvim-base16",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "base16-black-metal-gorgoroth",
+        callback = function()
+          vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#912222" })
+          vim.api.nvim_set_hl(0, "TSComment", { fg = "#6f7b68" })
+          vim.api.nvim_set_hl(0, "Comment", { fg = "#6f7b68" })
+          vim.api.nvim_set_hl(0, "Visual", { bg = "#9b8d7f", fg = "#1e1e1e" })
+          vim.api.nvim_set_hl(0, "Search", { bg = "#9b8d7f", fg = "#1e1e1e" })
+          vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#9b8d7f", fg = "#1e1e1e" })
+          vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#888888" })
+          vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#888888" })
+          vim.api.nvim_set_hl(0, "LineNr", { fg = "#d6d2c8" })
         end,
       })
     end,
@@ -73,7 +100,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vague",
+      colorscheme = "base16-black-metal-gorgoroth",
     },
   },
 }

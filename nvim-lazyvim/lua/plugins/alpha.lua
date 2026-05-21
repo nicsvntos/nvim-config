@@ -7,35 +7,48 @@ return {
       local alpha = require("alpha")
       local dashboard = require("alpha.themes.dashboard")
       local header = {
-        " :#%%###                              #+#*=-",
-        " +++**%%%##%-#                   =+#+####+=*:",
-        " =%%%%%%#%%%#%**               *#-###=*#####-",
-        " .%%%%@@=--**+##=            *#++:::::%%****-",
-        " #@%%@===:%@%%%++=#        #=*....::=::+%*=-:",
-        "%%+#@@==+@@@@%%%*:--#    ##-:..*%%%%-.::%%***=",
-        "%%%%@%===@@%%%%%%.-:. #% +-*+.-%%%%%%.::%%***:",
-        "#%%*%%@--+%%%%%%:=:+.#%*%.+-...%%%%#.-:*%**=*:",
-        " #%*=%%*%---*::.---###**%#=+++..=...::+****=:.",
-        "    =%%%%%%#%==**:.:##*#*-..-++#*********.",
-        "      ....   .#+..##**#*-*#..++#  .    .",
-        "           #+**...:*..--.**.:::***",
-        "           %=#%#:..:.=:::.*:::::**=",
-        "           #%=:..:.#.+-=+.*.=.-:**.",
-        "           #%#%+.:..*-+=-:..#:#***=",
-        "           #%%%%%%#*#    #:%%##***:",
-        "             ##%#%#*+    %##*-***:",
-        "                *%%      .*%#+",
-        "                 #         %",
-        "                 :         =",
+        "                                         #                      ",
+        "                -                       +                       ",
+        "                .#                    #.                        ",
+        "                 ##                 +#                          ",
+        "                  ##              .##                           ",
+        "                   ###           ###                            ",
+        "                   .###       .####.                            ",
+        "                    #####   ######+                             ",
+        "                     #############                              ",
+        "                    .#############                              ",
+        "             ...+##################+                            ",
+        "                  ######################.                       ",
+        "                    ###########################.                ",
+        "                     ###################################.       ",
+        "                    +############                        ..     ",
+        "                    ##     ######                               ",
+        "                   +         #####                              ",
+        "                              ####                              ",
+        "                               +###                             ",
+        "                                 ###                            ",
+        "                                  ##+                           ",
+        "                                   ##.                          ",
+        "                                    ##                          ",
+        "                                     +#                         ",
+        "                                      .#                        ",
+        "                                       .#                       ",
+        "                                         #                      ",
+        "                                          #                     ",
+        "                                           -                    ",
+        "                                            .                   ",
       }
 
-      dashboard.section.header.val = vim.list_slice(header, 1, 20)
+      local function icon(code)
+        return vim.fn.nr2char(code) .. " "
+      end
+
+      dashboard.section.header.val = header
       dashboard.section.buttons.val = {
-        dashboard.button("f", "  Find File", ":Telescope find_files<CR>"),
-        dashboard.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
-        dashboard.button("g", "  Live Grep", ":Telescope live_grep<CR>"),
-        dashboard.button("c", "  Config", ":Telescope find_files cwd=~/.config/nvim<CR>"),
-        dashboard.button("q", "  Quit", ":qa<CR>"),
+        dashboard.button("f", icon(0xf0311) .. " > Find File", ":Telescope find_files<CR>"),
+        dashboard.button("y", icon(0xf15b) .. " > Browse Files", ":Yazi<CR>"),
+        dashboard.button("b", icon(0xf0770) .. " > Browse Directory", ":Telescope zoxide list<CR>"),
+        dashboard.button("g", icon(0xf0349) .. " > Live Grep", ":Telescope live_grep<CR>"),
       }
 
       alpha.setup(dashboard.opts)

@@ -3,28 +3,23 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-mini/mini.icons" },
     event = "VeryLazy",
-    opts = {
-      options = {
+    opts = function(_, opts)
+      local theme = require("lualine.themes.iceberg_dark")
+      theme.normal.c.bg = nil
+      theme.inactive.b.bg = nil
+      theme.inactive.a.bg = nil
+      theme.inactive.c.bg = nil
+      theme.insert.a.bg = "#bc96b0"
+      theme.visual.a.bg = "#787bab"
+      theme.replace.a.bg = "#a1b3b9"
+
+      opts.options = {
         icons_enabled = false,
-        theme = {
-          normal = {
-            a = { fg = "#141415", bg = "#787bab" },
-            b = { fg = "#cdcdcd", bg = "#1c1c24" },
-            c = { fg = "#606079", bg = "#141415" },
-          },
-          insert = { a = { fg = "#141415", bg = "#8a739a" } },
-          visual = { a = { fg = "#141415", bg = "#6e94b2" } },
-          replace = { a = { fg = "#141415", bg = "#c48282" } },
-          inactive = {
-            a = { fg = "#606079", bg = "#141415" },
-            b = { fg = "#606079", bg = "#141415" },
-            c = { fg = "#606079", bg = "#141415" },
-          },
-        },
+        theme = theme,
         component_separators = "|",
         section_separators = "",
-      },
-      sections = {
+      }
+      opts.sections = {
         lualine_a = { "mode" },
         lualine_b = {
           "branch",
@@ -44,7 +39,7 @@ return {
         },
         lualine_y = { "progress" },
         lualine_z = { "location" },
-      },
-    },
+      }
+    end,
   },
 }
