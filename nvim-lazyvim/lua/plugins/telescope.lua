@@ -5,6 +5,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
+      "jvgootveld/telescope-zoxide",
     },
     config = function()
       require("telescope").setup({
@@ -61,6 +62,7 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       require("telescope").load_extension("zoxide")
+      vim.keymap.set("n", "<leader>fz", require("telescope._extensions.zoxide.list"), { desc = "Zoxide jump" })
     end,
   },
 }

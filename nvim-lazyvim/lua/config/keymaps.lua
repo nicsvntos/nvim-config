@@ -116,3 +116,4 @@ vim.keymap.set("n", "<leader>uC", function()
 end, { desc = "Switch colorscheme" })
 
 map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle zen mode" })
+map("n", "<leader>bd", "<cmd>Alpha<CR>", { desc = "Go back to dashboard" })

@@ -15,4 +15,7 @@ if vim.g.neovide then
 
   vim.o.columns = 200
   vim.o.lines = 50
+
+  local alt_f4 = "<A-F4>"
+  vim.keymap.set("n", alt_f4, "<cmd>wqa<CR>", { desc = "Quit all" })
 end
