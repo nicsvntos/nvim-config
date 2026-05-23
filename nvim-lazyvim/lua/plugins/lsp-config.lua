@@ -9,16 +9,21 @@ return {
           },
         },
       },
+      pyright = { enabled = false },
       rust_analyzer = {},
       basedpyright = {
         settings = {
           basedpyright = {
             analysis = {
               typeCheckingMode = "standard",
-              reportUnkownVariable = false,
+              reportUnknownVariable = false,
               reportUnknownMemberType = false,
               reportMissingTypeStubs = false,
               reportAny = false,
+              reportUnknownArgumentType = false,
+              reportUnknownParameterType = false,
+              reportUnknownVariableType = false,
+              reportAttributeAccessIssue = false,
             },
           },
         },
