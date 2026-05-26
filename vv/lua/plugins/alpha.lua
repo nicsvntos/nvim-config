@@ -42,10 +42,11 @@ return {
 
 			dashboard.section.header.val = header
 			dashboard.section.buttons.val = {
-				dashboard.button("f", icon(0xf0311) .. " > Find File", ":Telescope find_files<CR>"),
+				dashboard.button("f", icon(0xf021e) .. " > Find File", ":Telescope find_files<CR>"),
 				dashboard.button("y", icon(0xf15b) .. " > Browse Files", ":Yazi<CR>"),
 				dashboard.button("b", icon(0xf0770) .. " > Browse Directory", ":Telescope zoxide list<CR>"),
 				dashboard.button("g", icon(0xf0349) .. " > Live Grep", ":Telescope live_grep<CR>"),
+				dashboard.button("q", icon(0xf0206) .. " > Quit", ":q<CR>"),
 			}
 
 			alpha.setup(dashboard.opts)
