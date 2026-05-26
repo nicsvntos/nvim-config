@@ -104,3 +104,10 @@ autocmd("FileType", {
 		vim.opt_local.expandtab = true
 	end,
 })
+
+autocmd("CursorHold", {
+	desc = "Show diagnostic float",
+	callback = function()
+		vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+	end,
+})

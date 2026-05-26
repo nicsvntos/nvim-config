@@ -1,21 +1,21 @@
 return {
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		enabled = false,
-		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-		opts = {
-			cmdline = {
-				view = "cmdline_popup",
-				opts = {
-					position = {
-						row = 0,
-						col = "50%",
-					},
-				},
-			},
-		},
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	enabled = false,
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+	-- 	opts = {
+	-- 		cmdline = {
+	-- 			view = "cmdline_popup",
+	-- 			opts = {
+	-- 				position = {
+	-- 					row = 0,
+	-- 					col = "50%",
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"folke/persistence.nvim",
 		event = "BufReadPre",
@@ -34,7 +34,9 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {},
+		opts = {
+			check_ts = true,
+		},
 	},
 	{
 		"folke/which-key.nvim",

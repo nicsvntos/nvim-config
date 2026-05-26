@@ -50,7 +50,7 @@ return {
 			opts.options = {
 				icons_enabled = false,
 				theme = "auto",
-				--theme = theme,
+				-- theme = theme,
 				component_separators = "|",
 				section_separators = "",
 				globalstatus = true,

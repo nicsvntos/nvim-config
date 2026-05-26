@@ -3,21 +3,11 @@ return {
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
 		opts = {
-			opts = {
-				enable_close = true,
-				enable_rename = true,
-				enable_close_on_slash = true,
-			},
-			filetypes = {
-				"html",
-				"xml",
-				"javascript",
-				"typescript",
-				"javascriptreact",
-				"typescriptreact",
-				"svelte",
-				"css",
-				"markdown",
+			enable_close = true,
+			enable_rename = true,
+			enable_close_on_slash = true,
+			aliases = {
+				svelte = "html",
 			},
 		},
 	},

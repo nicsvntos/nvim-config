@@ -7,6 +7,10 @@ return {
 				settings = {
 					Lua = {
 						diagnostics = { globals = { "vim" } },
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+							checkThirdParty = false,
+						},
 					},
 				},
 			})
@@ -77,6 +81,15 @@ return {
 				"clangd",
 				"dockerls",
 				"docker_compose_language_service",
+			})
+			vim.lsp.config("*", {
+				capabilities = {
+					textDocument = {
+						semanticTokens = {
+							multilineTokenSupport = true,
+						},
+					},
+				},
 			})
 		end,
 	},

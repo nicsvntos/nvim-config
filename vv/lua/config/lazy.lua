@@ -22,7 +22,7 @@ require("lazy").setup({
 		lazy = false,
 		version = false,
 	},
-	install = { colorscheme = { "base16-black-metal-gorgoroth" } },
+	install = { colorscheme = { "vague" } },
 	checker = { enabled = true, notify = false },
 	performance = {
 		rtp = {
@@ -36,4 +36,4 @@ require("lazy").setup({
 		},
 	},
 })
-vim.cmd.colorscheme("base16-black-metal-gorgoroth")
+vim.cmd.colorscheme("vague")

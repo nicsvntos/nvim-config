@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.netrw_banner = 0
+vim.lsp.inlay_hint.enable(true)
 
 if vim.g.neovide then
 	vim.o.guifont = "Iosevka Nerd Font Mono:h14"
